@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{F2D93841-6967-43DB-A597-ACAC7471939F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "WebApplication2\Application.csproj", "{F2D93841-6967-43DB-A597-ACAC7471939F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApplication2", "WebApplication2", "{1DC38CA9-387D-49A6-A6EE-C517F4C008F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{48681AE3-DFC8-48DE-BD2D-081981F10187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "WebApplication2\tests\UnitTests\UnitTests.csproj", "{08471D19-176E-4167-BB54-E5FD2C3269F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "WebApplication2\tests\UnitTests\UnitTests.csproj", "{08471D19-176E-4167-BB54-E5FD2C3269F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,11 +29,11 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {03767875-95F6-4612-A402-0D35A826B1D9}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{48681AE3-DFC8-48DE-BD2D-081981F10187} = {1DC38CA9-387D-49A6-A6EE-C517F4C008F9}
 		{08471D19-176E-4167-BB54-E5FD2C3269F5} = {48681AE3-DFC8-48DE-BD2D-081981F10187}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03767875-95F6-4612-A402-0D35A826B1D9}
 	EndGlobalSection
 EndGlobal
