@@ -44,19 +44,19 @@ namespace WebApplication2.Data
             {
                 var credits = new Credit[]
                 {
-                    new Credit {CreditID=460, CreditAbbr='DB', CreditName='Databases', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=356, CreditAbbr='NF', CreditName='Network Fundamentals', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=542, CreditAbbr='542', CreditName='OOPS with Java', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=563, CreditAbbr='563', CreditName='Web Apps', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=560, CreditAbbr='560', CreditName='Advanced Databases', IsSummer=1, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=664, CreditAbbr='664-UX', CreditName='User Experience', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=618, CreditAbbr='618-PM', CreditName='Project Management', IsSummer=1, IsSpring=0, IsFall=0},
-                    new Credit {CreditID=555, CreditAbbr='555-NS', CreditName='Network Security', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=691, CreditAbbr='691-GDP1', CreditName='GDP1', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=692, CreditAbbr='692-GDP2', CreditName='GDP2', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=6, CreditAbbr='Mobile', CreditName='643 or 644 Mobile', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=10, CreditAbbr='E1', CreditName='Elective 1', IsSummer=0, IsSpring=1, IsFall=1},
-                    new Credit {CreditID=20, CreditAbbr='E2', CreditName='Elective 2', IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=460, CreditAbbr="DB", CreditName="Databases", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=356, CreditAbbr="NF", CreditName="Network Fundamentals", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=542, CreditAbbr="542", CreditName="OOPS with Java", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=563, CreditAbbr="563", CreditName="Web Apps", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=560, CreditAbbr="560", CreditName="Advanced Databases", IsSummer=1, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=664, CreditAbbr="664-UX", CreditName="User Experience", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=618, CreditAbbr="618-PM", CreditName="Project Management", IsSummer=1, IsSpring=0, IsFall=0},
+                    new Credit {CreditID=555, CreditAbbr="555-NS", CreditName="Network Security", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=691, CreditAbbr="691-GDP1", CreditName="GDP1", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=692, CreditAbbr="692-GDP2", CreditName="GDP2", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=6, CreditAbbr="Mobile", CreditName="643 or 644 Mobile", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=10, CreditAbbr="E1", CreditName="Elective 1", IsSummer=0, IsSpring=1, IsFall=1},
+                    new Credit {CreditID=20, CreditAbbr="E2", CreditName="Elective 2", IsSummer=0, IsSpring=1, IsFall=1},
 
                 };
                 Console.WriteLine($"Inserted {credits.Length} new credits.");
