@@ -33,13 +33,14 @@ namespace WebApplication2.Data
                 context.SaveChanges();
             }
 
+
             //for Credit - Malli
+
+            //for Student - Mouni
 
             //for DegreeCredit - Malli
 
             //for DegreePlan - Mouni 
-
-            //for Student - Mouni
 
             //for Slot - TEJA
 
@@ -104,19 +105,19 @@ namespace WebApplication2.Data
             {
                 var studentTerms = new StudentTerm[]
                 {
-                    new StudentTerm {StudentTermID=1, StudentId=533568, Term=1, TermAbbr="F18", TermName="Fall 2018"},
-                    new StudentTerm {StudentTermID=2, StudentId=533568, Term=2, TermAbbr="SP19", TermName="Spring 2019"},
-                    new StudentTerm {StudentTermID=3, StudentId=533568, Term=3, TermAbbr="SU19", TermName="Summer 2019"},
-                    new StudentTerm {StudentTermID=4, StudentId=533568, Term=4, TermAbbr="F19", TermName="Fall 2019"},
-                    new StudentTerm {StudentTermID=5, StudentId=533708, Term=1, TermAbbr="F18", TermName="Fall 2018"},
-                    new StudentTerm {StudentTermID=6, StudentId=533708, Term=2, TermAbbr="SP19", TermName="Spring 2019"},
-                    new StudentTerm {StudentTermID=7, StudentId=533708, Term=3, TermAbbr="SU19", TermName="Summer 2019"},
-                    new StudentTerm {StudentTermID=8, StudentId=533708, Term=4, TermAbbr="F19", TermName="Fall 2019"},
-                    new StudentTerm {StudentTermID=9, StudentId=533708, Term=5, TermAbbr="SP20", TermName="Spring 2020"},
-                    new StudentTerm {StudentTermID=10, StudentId=533897, Term=1, TermAbbr="SP20", TermName="Spring 2020"},
-                    new StudentTerm {StudentTermID=11, StudentId=533897, Term=2, TermAbbr="FA20", TermName="Fall 2020"},
-                    new StudentTerm {StudentTermID=12, StudentId=533897, Term=3, TermAbbr="SP21", TermName="Spring 2021"},
-                    new StudentTerm {StudentTermID=13, StudentId=533897, Term=4, TermAbbr="SU21", TermName="Summer 2021"},
+                    new StudentTerm {StudentTermID=1, StudentID=533568, Term=1, TermAbbr="F18", TermName="Fall 2018"},
+                    new StudentTerm {StudentTermID=2, StudentID=533568, Term=2, TermAbbr="SP19", TermName="Spring 2019"},
+                    new StudentTerm {StudentTermID=3, StudentID=533568, Term=3, TermAbbr="SU19", TermName="Summer 2019"},
+                    new StudentTerm {StudentTermID=4, StudentID=533568, Term=4, TermAbbr="F19", TermName="Fall 2019"},
+                    new StudentTerm {StudentTermID=5, StudentID=533708, Term=1, TermAbbr="F18", TermName="Fall 2018"},
+                    new StudentTerm {StudentTermID=6, StudentID=533708, Term=2, TermAbbr="SP19", TermName="Spring 2019"},
+                    new StudentTerm {StudentTermID=7, StudentID=533708, Term=3, TermAbbr="SU19", TermName="Summer 2019"},
+                    new StudentTerm {StudentTermID=8, StudentID=533708, Term=4, TermAbbr="F19", TermName="Fall 2019"},
+                    new StudentTerm {StudentTermID=9, StudentID=533708, Term=5, TermAbbr="SP20", TermName="Spring 2020"},
+                    new StudentTerm {StudentTermID=10, StudentID=533897, Term=1, TermAbbr="SP20", TermName="Spring 2020"},
+                    new StudentTerm {StudentTermID=11, StudentID=533897, Term=2, TermAbbr="FA20", TermName="Fall 2020"},
+                    new StudentTerm {StudentTermID=12, StudentID=533897, Term=3, TermAbbr="SP21", TermName="Spring 2021"},
+                    new StudentTerm {StudentTermID=13, StudentID=533897, Term=4, TermAbbr="SU21", TermName="Summer 2021"},
 
                 };
                 Console.WriteLine($"Inserted {studentTerms.Length} new student terms.");
