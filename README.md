@@ -7,5 +7,6 @@
 1. DbInitializer cs file added.
 1. Data seeded for Degree, Slot, StudentTerm.
 1. Data seeded for Credit, DegreeCredit
+1. Data seeded for Student, DegreePlan
 
 *Sample data included*
