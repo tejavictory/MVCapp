@@ -43,6 +43,58 @@ namespace WebApplication2.Data
 
             //for Slot - TEJA
 
+            if (context.Slots.Any())
+            {
+                Console.WriteLine("Slots already exist.");
+            }
+            else
+            {
+                var slots = new Slot[]
+                {
+                    new Slot {SlotID=1, DegreePlanSelected=5681, Term=1, CreditID=542, Status="C"},
+                    new Slot {SlotID=2, DegreePlanSelected=5681, Term=1, CreditID=563, Status="C"},
+                    new Slot {SlotID=3, DegreePlanSelected=5681, Term=1, CreditID=560, Status="C"},
+                    new Slot {SlotID=4, DegreePlanSelected=5681, Term=2, CreditID=664, Status="A"},
+                    new Slot {SlotID=5, DegreePlanSelected=5681, Term=2, CreditID=6, Status="A"},
+                    new Slot {SlotID=6, DegreePlanSelected=5681, Term=2, CreditID=10, Status="A"},
+                    new Slot {SlotID=7, DegreePlanSelected=5681, Term=3, CreditID=618, Status="P"},
+                    new Slot {SlotID=8, DegreePlanSelected=5681, Term=3, CreditID=691, Status="P"},
+                    new Slot {SlotID=9, DegreePlanSelected=5681, Term=4, CreditID=692, Status="P"},
+                    new Slot {SlotID=10, DegreePlanSelected=5681, Term=4, CreditID=20, Status="P"},
+                    new Slot {SlotID=11, DegreePlanSelected=5681, Term=4, CreditID=555, Status="P"},
+                    new Slot {SlotID=12, DegreePlanSelected=7082, Term=1, CreditID=542, Status="C"},
+                    new Slot {SlotID=13, DegreePlanSelected=7082, Term=1, CreditID=563, Status="C"},
+                    new Slot {SlotID=14, DegreePlanSelected=7082, Term=1, CreditID=560, Status="C"},
+                    new Slot {SlotID=15, DegreePlanSelected=7082, Term=2, CreditID=664, Status="A"},
+                    new Slot {SlotID=16, DegreePlanSelected=7082, Term=2, CreditID=6, Status="A"},
+                    new Slot {SlotID=17, DegreePlanSelected=7082, Term=2, CreditID=10, Status="A"},
+                    new Slot {SlotID=18, DegreePlanSelected=7082, Term=3, CreditID=618, Status="P"},
+                    new Slot {SlotID=19, DegreePlanSelected=7082, Term=4, CreditID=691, Status="P"},
+                    new Slot {SlotID=20, DegreePlanSelected=7082, Term=4, CreditID=20, Status="P"},
+                    new Slot {SlotID=21, DegreePlanSelected=7082, Term=5, CreditID=692, Status="P"},
+                    new Slot {SlotID=22, DegreePlanSelected=7082, Term=5, CreditID=555, Status="P"},
+                    new Slot {SlotID=23, DegreePlanSelected=8973, Term=1, CreditID=542, Status="A"},
+                    new Slot {SlotID=24, DegreePlanSelected=8973, Term=1, CreditID=563, Status="A"},
+                    new Slot {SlotID=25, DegreePlanSelected=8973, Term=1, CreditID=560, Status="A"},
+                    new Slot {SlotID=26, DegreePlanSelected=8973, Term=2, CreditID=664, Status="P"},
+                    new Slot {SlotID=27, DegreePlanSelected=8973, Term=2, CreditID=6, Status="P"},
+                    new Slot {SlotID=28, DegreePlanSelected=8973, Term=2, CreditID=10, Status="P"},
+                    new Slot {SlotID=29, DegreePlanSelected=8973, Term=3, CreditID=20, Status="P"},
+                    new Slot {SlotID=30, DegreePlanSelected=8973, Term=3, CreditID=555, Status="P"},
+                    new Slot {SlotID=31, DegreePlanSelected=8973, Term=3, CreditID=691, Status="P"},
+                    new Slot {SlotID=32, DegreePlanSelected=8973, Term=4, CreditID=618, Status="P"},
+                    new Slot {SlotID=33, DegreePlanSelected=8973, Term=4, CreditID=692, Status="P"},
+
+                };
+                Console.WriteLine($"Inserted {slots.Length} new slots.");
+
+                foreach (Slot d in slots)
+                {
+                    context.Slots.Add(d);
+                }
+                context.SaveChanges();
+            }
+
             //for StudentTerm - TEJA
             if (context.StudentTerms.Any())
             {
