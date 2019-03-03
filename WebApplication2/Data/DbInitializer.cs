@@ -71,6 +71,30 @@ namespace WebApplication2.Data
 
             //for Student - Mouni
 
+            if (context.Students.Any())
+            {
+                Console.WriteLine("Students already exist.");
+            }
+            else
+            {
+                var students = new Student[]
+                {
+                    new Student {StudentID=533568, Family='Bodepudi', Given='Mallikarjuna', N919=919569870},
+                    new Student {StudentID=533708, Family='Kancharla', Given='Sai Krishna Teja', N919=919571315},
+                    new Student {StudentID=533897, Family='Atluri', Given='Mouni Krishna', N919=919571233},
+
+                };
+                Console.WriteLine($"Inserted {students.Length} new students.");
+
+                foreach (Student d in students)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+
+
+
             //for DegreeCredit - Malli
 
             if (context.DegreeCredits.Any())
@@ -142,6 +166,33 @@ namespace WebApplication2.Data
 
 
             //for DegreePlan - Mouni 
+
+            if (context.DegreePlans.Any())
+            {
+                Console.WriteLine("Degree Plans already exist.");
+            }
+            else
+            {
+                var degreePlans = new DegreePlan[]
+                {
+                    new DegreePlan {DegreePlanID=1, StudentID=533568, DegreePlanAbbr='Super Fast', DegreePlanName='Cheetah', DegreePlanSelected=5681},
+                    new DegreePlan {DegreePlanID=2, StudentID=533568, DegreePlanAbbr='Slow and Easy', DegreePlanName='Tortoise', DegreePlanSelected=5682},
+                    new DegreePlan {DegreePlanID=3, StudentID=533708, DegreePlanAbbr='Super Fast', DegreePlanName='Cheetah', DegreePlanSelected=7081},
+                    new DegreePlan {DegreePlanID=4, StudentID=533708, DegreePlanAbbr='Slow and Easy', DegreePlanName='Tortoise', DegreePlanSelected=7082},
+                    new DegreePlan {DegreePlanID=5, StudentID=533897, DegreePlanAbbr='Super Fast', DegreePlanName='Cheetah', DegreePlanSelected=8971},
+                    new DegreePlan {DegreePlanID=6, StudentID=533897, DegreePlanAbbr='Summer Off', DegreePlanName='Rabbit', DegreePlanSelected=8973},
+
+
+                };
+                Console.WriteLine($"Inserted {degreePlans.Length} new Degree Plans.");
+
+                foreach (DegreePlan d in degreePlans)
+                {
+                    context.DegreePlans.Add(d);
+                }
+                context.SaveChanges();
+            }
+
 
             //for Slot - TEJA
 
