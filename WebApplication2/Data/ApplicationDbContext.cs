@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebApplication2.Models;
 
 namespace WebApplication2.Data
 {
@@ -11,6 +12,8 @@ namespace WebApplication2.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
+
         }
         public DbSet<Degree> Degrees {get;set;}
         public DbSet<Credit> Credits {get;set;}
@@ -21,6 +24,7 @@ namespace WebApplication2.Data
         public DbSet<StudentTerm> StudentTerms {get;set;}
         
         protected override void OnModelCreating(ModelBuilder modelBuilder){
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Degree>().ToTable("Degree");
             modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");

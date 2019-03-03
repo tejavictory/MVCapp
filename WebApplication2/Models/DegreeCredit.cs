@@ -2,7 +2,7 @@ using System;
 
 namespace WebApplication2.Models
 {
-    public class Credit
+    public class DegreeCredit
     {
         public int CreditID { get; set; }
         public string CreditAbbr { get; set; }
