@@ -79,9 +79,9 @@ namespace WebApplication2.Data
             {
                 var students = new Student[]
                 {
-                    new Student {StudentID=533568, Family='Bodepudi', Given='Mallikarjuna', N919=919569870},
-                    new Student {StudentID=533708, Family='Kancharla', Given='Sai Krishna Teja', N919=919571315},
-                    new Student {StudentID=533897, Family='Atluri', Given='Mouni Krishna', N919=919571233},
+                    new Student {StudentID=533568, Family="Bodepudi", Given="Mallikarjuna", N919=919569870},
+                    new Student {StudentID=533708, Family="Kancharla", Given="Sai Krishna Teja", N919=919571315},
+                    new Student {StudentID=533897, Family="Atluri", Given="Mouni Krishna", N919=919571233},
 
                 };
                 Console.WriteLine($"Inserted {students.Length} new students.");
@@ -175,12 +175,12 @@ namespace WebApplication2.Data
             {
                 var degreePlans = new DegreePlan[]
                 {
-                    new DegreePlan {DegreePlanID=1, StudentID=533568, DegreePlanAbbr='Super Fast', DegreePlanName='Cheetah', DegreePlanSelected=5681},
-                    new DegreePlan {DegreePlanID=2, StudentID=533568, DegreePlanAbbr='Slow and Easy', DegreePlanName='Tortoise', DegreePlanSelected=5682},
-                    new DegreePlan {DegreePlanID=3, StudentID=533708, DegreePlanAbbr='Super Fast', DegreePlanName='Cheetah', DegreePlanSelected=7081},
-                    new DegreePlan {DegreePlanID=4, StudentID=533708, DegreePlanAbbr='Slow and Easy', DegreePlanName='Tortoise', DegreePlanSelected=7082},
-                    new DegreePlan {DegreePlanID=5, StudentID=533897, DegreePlanAbbr='Super Fast', DegreePlanName='Cheetah', DegreePlanSelected=8971},
-                    new DegreePlan {DegreePlanID=6, StudentID=533897, DegreePlanAbbr='Summer Off', DegreePlanName='Rabbit', DegreePlanSelected=8973},
+                    new DegreePlan {DegreePlanID=1, StudentID=533568, DegreePlanAbbr="Super Fast", DegreePlanName="Cheetah", DegreePlanSelected=5681},
+                    new DegreePlan {DegreePlanID=2, StudentID=533568, DegreePlanAbbr="Slow and Easy", DegreePlanName="Tortoise", DegreePlanSelected=5682},
+                    new DegreePlan {DegreePlanID=3, StudentID=533708, DegreePlanAbbr="Super Fast", DegreePlanName="Cheetah", DegreePlanSelected=7081},
+                    new DegreePlan {DegreePlanID=4, StudentID=533708, DegreePlanAbbr="Slow and Easy", DegreePlanName="Tortoise", DegreePlanSelected=7082},
+                    new DegreePlan {DegreePlanID=5, StudentID=533897, DegreePlanAbbr="Super Fast", DegreePlanName="Cheetah", DegreePlanSelected=8971},
+                    new DegreePlan {DegreePlanID=6, StudentID=533897, DegreePlanAbbr="Summer Off", DegreePlanName="Rabbit", DegreePlanSelected=8973},
 
 
                 };
