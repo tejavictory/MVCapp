@@ -1,9 +1,12 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication2.Models
 {
     public class Degree
     {
+        [Key]
         public int DegreeID { get; set; }
         public string DegreeAbbr { get; set; }
         public string DegreeName { get; set; }
