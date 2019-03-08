@@ -7,6 +7,7 @@ namespace WebApplication2.Models
     public class Student
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentID { get; set; }
         public string Family { get; set; }
         public string Given { get; set; }

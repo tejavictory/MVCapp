@@ -7,6 +7,7 @@ namespace WebApplication2.Models
     public class Credit
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CreditID { get; set; }
         public string CreditAbbr { get; set; }
         public string CreditName { get; set; }

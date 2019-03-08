@@ -7,6 +7,7 @@ namespace WebApplication2.Models
     public class DegreePlan
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreePlanID { get; set; }
         public int StudentID { get; set; }
         public string DegreePlanAbbr { get; set; }

@@ -8,6 +8,7 @@ namespace WebApplication2.Models
     {
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreeCreditID { get; set; }
         public int DegreeID { get; set; }
         public int CreditID { get; set; }    

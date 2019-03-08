@@ -10,6 +10,7 @@ namespace WebApplication2.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
+            context.Database.EnsureCreated();
             //for Degree - TEJA
             if (context.Degrees.Any())
             {
@@ -19,10 +20,11 @@ namespace WebApplication2.Data
             {
                 var degrees = new Degree[]
                 {
-                    new Degree { DegreeID = 1, DegreeAbbr = "ACS+2", DegreeName = "MS ACS+2" },
-                    new Degree { DegreeID = 2, DegreeAbbr = "ACS+DB", DegreeName = "MS ACS+DB" },
-                    new Degree { DegreeID = 3, DegreeAbbr = "ACS+NF", DegreeName = "MS ACS+NF" },
-                    new Degree { DegreeID = 4, DegreeAbbr = "ACS", DegreeName = "MS ACS" },
+                    new Degree {DegreeID = 1, DegreeAbbr="ACS+2", DegreeName="MS ACS+2", NumberOfTerms=4},
+                    new Degree {DegreeID = 2, DegreeAbbr="ACS+DB", DegreeName="MS ACS+DB", NumberOfTerms=4},
+                    new Degree {DegreeID = 3, DegreeAbbr="ACS+NF", DegreeName="MS ACS+NF", NumberOfTerms=4},
+                    new Degree {DegreeID = 4, DegreeAbbr="ACS", DegreeName="MS ACS", NumberOfTerms=4},
+
                 };
                 Console.WriteLine($"Inserted {degrees.Length} new degrees.");
 
@@ -39,6 +41,7 @@ namespace WebApplication2.Data
             if (context.Credits.Any())
             {
                 Console.WriteLine("Credits already exist.");
+                return;
             }
             else
             {
@@ -74,6 +77,7 @@ namespace WebApplication2.Data
             if (context.Students.Any())
             {
                 Console.WriteLine("Students already exist.");
+                return;
             }
             else
             {
@@ -100,6 +104,8 @@ namespace WebApplication2.Data
             if (context.DegreeCredits.Any())
             {
                 Console.WriteLine("DegreeCredits already exist.");
+                return;
+
             }
             else
             {
@@ -170,6 +176,7 @@ namespace WebApplication2.Data
             if (context.DegreePlans.Any())
             {
                 Console.WriteLine("Degree Plans already exist.");
+                return;
             }
             else
             {
@@ -199,6 +206,7 @@ namespace WebApplication2.Data
             if (context.Slots.Any())
             {
                 Console.WriteLine("Slots already exist.");
+                return;
             }
             else
             {
@@ -252,6 +260,7 @@ namespace WebApplication2.Data
             if (context.StudentTerms.Any())
             {
                 Console.WriteLine("Student Terms already exist.");
+                return;
             }
             else
             {

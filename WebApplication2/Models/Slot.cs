@@ -7,6 +7,7 @@ namespace WebApplication2.Models
     public class Slot
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlotID { get; set; }
         public int DegreePlanSelected { get; set; }
         public int Term { get; set; }

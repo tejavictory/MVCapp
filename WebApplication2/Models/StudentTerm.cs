@@ -7,6 +7,7 @@ namespace WebApplication2.Models
     public class StudentTerm
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentTermID { get; set; }
         public int StudentID { get; set; }
         public int Term { get; set; }
