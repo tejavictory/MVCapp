@@ -1,0 +1,36 @@
+﻿@model WebApplication2.Models.Degree
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Degree</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DegreeAbbr)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DegreeAbbr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DegreeName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumberOfTerms)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfTerms)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DegreeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
