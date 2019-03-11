@@ -8,7 +8,7 @@ namespace WebApplication2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int DegreeID { get; set; }
+        public int DegreeId { get; set; }
         public string DegreeAbbr { get; set; }
         public string DegreeName { get; set; }
         public int NumberOfTerms { get; set; }

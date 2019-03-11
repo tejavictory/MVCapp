@@ -8,11 +8,14 @@ namespace WebApplication2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int SlotID { get; set; }
+        public int SlotId { get; set; }
         public int DegreePlanSelected { get; set; }
         public int Term { get; set; }
-        public int CreditID { get; set; }
+        public int CreditId { get; set; }
         public string Status { get; set; }
-       
+
+        public Credit Credit { get; set; }
+
+
     }
 }

@@ -8,7 +8,7 @@ namespace WebApplication2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CreditID { get; set; }
+        public int CreditId { get; set; }
         public string CreditAbbr { get; set; }
         public string CreditName { get; set; }
         public int IsSummer { get; set; }
