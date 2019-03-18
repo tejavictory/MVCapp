@@ -9,56 +9,64 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.ActionLink("Credit Abbr", "Index", new { sortOrder = ViewBag.AbbrSortParm })
-
-            </th>
-            <th>
-                @Html.ActionLink("Credit Name", "Index", new { sortOrder = ViewBag.NameSortParm })
-
-            </th>
-            <th>
-                @Html.ActionLink("Is Summer", "Index", new { sortOrder = ViewBag.DefSortParm })
-
-            </th>
-            <th>
-                @Html.ActionLink("Is Spring", "Index", new { sortOrder = ViewBag.IsSort })
-
-            </th>
-            <th>
-                @Html.ActionLink("Is Fall", "Index", new { sortOrder = ViewBag.DefSortParm })
-
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreditAbbr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreditName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSummer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSpring)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFall)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CreditId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CreditId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CreditId">Delete</a>
-            </td>
-        </tr>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
 }
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Credit Abbr", "Index", new { sortOrder = ViewBag.AbbrSortParm })
+
+                </th>
+                <th>
+                    @Html.ActionLink("Credit Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+
+                </th>
+                <th>
+                    @Html.ActionLink("Is Summer", "Index", new { sortOrder = ViewBag.DefSortParm })
+
+                </th>
+                <th>
+                    @Html.ActionLink("Is Spring", "Index", new { sortOrder = ViewBag.IsSort })
+
+                </th>
+                <th>
+                    @Html.ActionLink("Is Fall", "Index", new { sortOrder = ViewBag.DefSortParm })
+
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditAbbr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsSummer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsSpring)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsFall)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CreditId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CreditId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CreditId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

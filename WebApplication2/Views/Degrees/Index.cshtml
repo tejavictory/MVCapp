@@ -9,42 +9,50 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.ActionLink("Degree Abbr", "Index", new { sortOrder = ViewBag.AbbrSortParm })
-
-            </th>
-            <th>
-                @Html.ActionLink("Degree Name", "Index", new { sortOrder = ViewBag.NumberSortParm })
-
-            </th>
-            <th>
-                @Html.ActionLink("Number of Terms", "Index", new { sortOrder = ViewBag.NameSortParm })
-
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DegreeAbbr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DegreeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfTerms)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DegreeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DegreeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DegreeId">Delete</a>
-            </td>
-        </tr>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
 }
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Degree Abbr", "Index", new { sortOrder = ViewBag.AbbrSortParm })
+
+                </th>
+                <th>
+                    @Html.ActionLink("Degree Name", "Index", new { sortOrder = ViewBag.NumberSortParm })
+
+                </th>
+                <th>
+                    @Html.ActionLink("Number of Terms", "Index", new { sortOrder = ViewBag.NameSortParm })
+
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DegreeAbbr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DegreeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfTerms)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.DegreeId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.DegreeId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.DegreeId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
