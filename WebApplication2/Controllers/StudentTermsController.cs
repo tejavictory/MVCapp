@@ -20,10 +20,45 @@ namespace Application.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
             var applicationDbContext = _context.StudentTerms.Include(s => s.Student);
-            return View(await applicationDbContext.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
+            ViewBag.AbbrSortParm = sortOrder == "Abbr" ? "abbr_desc" : "Abbr";
+            ViewBag.TermSort = sortOrder == "Term" ? "term_desc" : "Term";
+
+            var students = from s in _context.StudentTerms
+                           select s;
+            switch (sortOrder)
+            {
+                case "Abbr":
+                    students = students.OrderBy(s => s.TermAbbr);
+                    break;
+                case "abbr_desc":
+                    students = students.OrderByDescending(s => s.TermAbbr);
+                    break;
+                case "Number":
+                    students = students.OrderBy(s => s.StudentId);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.StudentId);
+                    break;
+                case "term_desc":
+                    students = students.OrderByDescending(s => s.Term);
+                    break;
+                case "Term":
+                    students = students.OrderBy(s => s.Term);
+                    break;
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.TermName);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.StudentTermId);
+                    break;
+            }
+            return View(students.ToList());
+            //           return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: StudentTerms/Details/5
