@@ -20,10 +20,35 @@ namespace Application.Controllers
         }
 
         // GET: DegreeCredits
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
             var applicationDbContext = _context.DegreeCredits.Include(d => d.Credit).Include(d => d.Degree);
-            return View(await applicationDbContext.ToListAsync());
+            ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
+            ViewBag.AbbrSortParm = sortOrder == "Abbr" ? "abbr_desc" : "Abbr";
+
+            var students = from s in _context.DegreeCredits
+                           select s;
+            switch (sortOrder)
+            {
+                case "Abbr":
+                    students = students.OrderBy(s => s.CreditId);
+                    break;
+                case "abbr_desc":
+                    students = students.OrderByDescending(s => s.CreditId);
+                    break;
+                case "Number":
+                    students = students.OrderBy(s => s.DegreeId);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.DegreeId);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.DegreeCreditId);
+                    break;
+            }
+            return View(students.ToList());
+
+ //           return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: DegreeCredits/Details/5

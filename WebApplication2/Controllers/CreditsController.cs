@@ -20,9 +20,47 @@ namespace Application.Controllers
         }
 
         // GET: Credits
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Credits.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
+            ViewBag.AbbrSortParm = sortOrder == "Abbr" ? "abbr_desc" : "Abbr";
+            ViewBag.IsSort = sortOrder == "Is" ? "is_desc" : "Is";
+            
+            var students = from s in _context.Credits
+                           select s;
+            switch (sortOrder)
+            {
+                case "Abbr":
+                    students = students.OrderBy(s => s.CreditAbbr);
+                    break;
+                case "abbr_desc":
+                    students = students.OrderByDescending(s => s.CreditAbbr);
+                    break;
+                case "Number":
+                    students = students.OrderBy(s => s.CreditId);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.CreditId);
+                    break;
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.CreditName);
+                    break;
+                case "Is":
+                    students = students.OrderBy(s => s.IsSpring);
+                    break;
+                case "is_desc":
+                    students = students.OrderByDescending(s => s.IsSpring);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.CreditId);
+                    break;
+            }
+            return View(students.ToList());
+
+
+
+ //           return View(await _context.Credits.ToListAsync());
         }
 
         // GET: Credits/Details/5

@@ -13,19 +13,24 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CreditAbbr)
+                @Html.ActionLink("Credit Abbr", "Index", new { sortOrder = ViewBag.AbbrSortParm })
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreditName)
+                @Html.ActionLink("Credit Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsSummer)
+                @Html.ActionLink("Is Summer", "Index", new { sortOrder = ViewBag.DefSortParm })
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsSpring)
+                @Html.ActionLink("Is Spring", "Index", new { sortOrder = ViewBag.IsSort })
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsFall)
+                @Html.ActionLink("Is Fall", "Index", new { sortOrder = ViewBag.DefSortParm })
+
             </th>
             <th></th>
         </tr>
