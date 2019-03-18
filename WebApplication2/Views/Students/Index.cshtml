@@ -13,13 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Family)
+                @Html.ActionLink("Family", "Index", new { sortOrder = ViewBag.NameSortParm })
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Given)
+                @Html.ActionLink("Given", "Index", new { sortOrder = ViewBag.AbbrSortParm })
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.N919)
+                @Html.ActionLink("N919", "Index", new { sortOrder = ViewBag.NumberSortParm })
+
             </th>
             <th></th>
         </tr>

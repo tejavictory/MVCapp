@@ -20,10 +20,45 @@ namespace Application.Controllers
         }
 
         // GET: Slots
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
             var applicationDbContext = _context.Slots.Include(s => s.Credit);
-            return View(await applicationDbContext.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
+            ViewBag.AbbrSortParm = sortOrder == "Abbr" ? "abbr_desc" : "Abbr";
+            ViewBag.TermSort = sortOrder == "Term"?"term_desc":"Term";
+
+            var students = from s in _context.Slots
+                           select s;
+            switch (sortOrder)
+            {
+                case "Abbr":
+                    students = students.OrderBy(s => s.DegreePlanSelected);
+                    break;
+                case "abbr_desc":
+                    students = students.OrderByDescending(s => s.DegreePlanSelected);
+                    break;
+                case "Number":
+                    students = students.OrderBy(s => s.CreditId);
+                    break;
+                case "number_desc":
+                    students = students.OrderByDescending(s => s.CreditId);
+                    break;
+                case "term_desc":
+                    students = students.OrderByDescending(s => s.Term);
+                    break;
+                case "Term":
+                    students = students.OrderBy(s => s.Term);
+                    break;
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.Status);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.SlotId);
+                    break;
+            }
+            return View(students.ToList());
+           // return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Slots/Details/5

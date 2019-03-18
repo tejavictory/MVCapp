@@ -13,16 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DegreePlanSelected)
+                @Html.ActionLink("Plan", "Index", new { sortOrder = ViewBag.AbbrSortParm })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Term)
+                @Html.ActionLink("Term", "Index", new { sortOrder = ViewBag.TermSortParm })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                @Html.ActionLink("Credit", "Index", new { sortOrder = ViewBag.NumberSortParm })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Credit)
+                @Html.ActionLink("Status", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
             <th></th>
         </tr>
