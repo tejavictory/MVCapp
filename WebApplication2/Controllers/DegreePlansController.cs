@@ -20,7 +20,7 @@ namespace Application.Controllers
         }
 
         // GET: DegreePlans
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             var applicationDbContext = _context.DegreePlans.Include(d => d.Student);
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -30,6 +30,11 @@ namespace Application.Controllers
 
             var students = from s in _context.DegreePlans
                            select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.DegreePlanId.Equals(Int32.Parse(searchString))
+                                       || s.DegreePlanAbbr.Contains(searchString) || s.DegreePlanName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "Abbr":
