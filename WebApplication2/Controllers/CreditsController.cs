@@ -20,7 +20,7 @@ namespace Application.Controllers
         }
 
         // GET: Credits
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
@@ -29,6 +29,11 @@ namespace Application.Controllers
             
             var students = from s in _context.Credits
                            select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.CreditId.Equals(Int32.Parse(searchString))
+                                       || s.CreditName.Contains(searchString)|| s.CreditAbbr.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "Abbr":

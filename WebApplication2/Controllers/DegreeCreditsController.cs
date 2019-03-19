@@ -20,7 +20,7 @@ namespace Application.Controllers
         }
 
         // GET: DegreeCredits
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             var applicationDbContext = _context.DegreeCredits.Include(d => d.Credit).Include(d => d.Degree);
             ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
@@ -28,6 +28,11 @@ namespace Application.Controllers
 
             var students = from s in _context.DegreeCredits
                            select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.CreditId.Equals(Int32.Parse(searchString))
+                                       || s.DegreeId.Equals(Int32.Parse(searchString)));
+            }
             switch (sortOrder)
             {
                 case "Abbr":
