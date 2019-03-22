@@ -19,9 +19,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.ActionLink("StudentId", "Index", new { sortOrder = ViewBag.NumberSortParm })
-            </th>
+
             <th>
                 @Html.ActionLink("Term", "Index", new { sortOrder = ViewBag.TermSort })
             </th>
@@ -30,6 +28,9 @@
             </th>
             <th>
                 @Html.ActionLink("Term Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("StudentId", "Index", new { sortOrder = ViewBag.NumberSortParm })
             </th>
             <th></th>
         </tr>
@@ -48,7 +49,7 @@
                     @Html.DisplayFor(modelItem => item.TermName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Student.StudentId)
+                    @Html.DisplayFor(modelItem => item.StudentId)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.StudentTermId">Edit</a> |

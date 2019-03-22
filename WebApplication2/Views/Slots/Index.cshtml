@@ -26,11 +26,12 @@
                 @Html.ActionLink("Term", "Index", new { sortOrder = ViewBag.TermSortParm })
             </th>
             <th>
-                @Html.ActionLink("Credit", "Index", new { sortOrder = ViewBag.NumberSortParm })
-            </th>
-            <th>
                 @Html.ActionLink("Status", "Index", new { sortOrder = ViewBag.NameSortParm })
             </th>
+            <th>
+                @Html.ActionLink("Credit", "Index", new { sortOrder = ViewBag.NumberSortParm })
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -48,7 +49,7 @@
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Credit.CreditId)
+                    @Html.DisplayFor(modelItem => item.CreditId)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.SlotId">Edit</a> |
