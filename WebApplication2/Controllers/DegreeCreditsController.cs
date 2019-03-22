@@ -30,7 +30,7 @@ namespace Application.Controllers
                            select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                students = students.Where(s => s.CreditId.Equals(Int32.Parse(searchString))
+                students = students.Where(s => s.CreditId.Equals(searchString)
                                        || s.DegreeId.Equals(Int32.Parse(searchString)));
             }
             switch (sortOrder)

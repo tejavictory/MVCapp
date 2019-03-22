@@ -30,9 +30,11 @@ namespace Application.Controllers
 
             var students = from s in _context.DegreePlans
                            select s;
+
             if (!String.IsNullOrEmpty(searchString))
             {
-                students = students.Where(s => s.DegreePlanId.Equals(Int32.Parse(searchString))
+                //typecast for id searchstring.
+                students = students.Where(s => s.DegreePlanId.Equals(searchString)
                                        || s.DegreePlanAbbr.Contains(searchString) || s.DegreePlanName.Contains(searchString));
             }
             switch (sortOrder)

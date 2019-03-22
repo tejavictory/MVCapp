@@ -32,7 +32,7 @@ namespace Application.Controllers
                            select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                students = students.Where(s => s.StudentTermId.Equals(Int32.Parse(searchString))
+                students = students.Where(s => s.StudentTermId.Equals(searchString)
                                        || s.TermAbbr.Contains(searchString) || s.TermName.Contains(searchString));
             }
             switch (sortOrder)
