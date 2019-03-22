@@ -9,6 +9,13 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -28,26 +35,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DegreePlanSelected)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Term)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Credit.CreditId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SlotId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SlotId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SlotId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DegreePlanSelected)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Term)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credit.CreditId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SlotId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SlotId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SlotId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -20,7 +20,7 @@ namespace Application.Controllers
         }
 
         // GET: Slots
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             var applicationDbContext = _context.Slots.Include(s => s.Credit);
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -30,6 +30,11 @@ namespace Application.Controllers
 
             var students = from s in _context.Slots
                            select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.SlotId.Equals(Int32.Parse(searchString))
+                                       || s.Status.Contains(searchString)) ;
+            }
             switch (sortOrder)
             {
                 case "Abbr":
