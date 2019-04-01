@@ -9,6 +9,8 @@
 1. Data seeded for Credit, DegreeCredit
 1. Data seeded for Student, DegreePlan
 
+
 Controllers and Views scaffolded successfully.
+Searching and Sorting implemented.
 
 *Sample data included*
