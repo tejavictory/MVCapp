@@ -61,11 +61,12 @@ namespace Application.Controllers
                     students = students.OrderBy(s => s.CreditId);
                     break;
             }
-            return View(students.ToList());
+            //return View(students.ToList());
+            return View(await students.ToListAsync());
 
 
 
- //           return View(await _context.Credits.ToListAsync());
+            //           return View(await _context.Credits.ToListAsync());
         }
 
         // GET: Credits/Details/5

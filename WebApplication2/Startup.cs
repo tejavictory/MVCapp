@@ -37,10 +37,10 @@ namespace WebApplication2
 
                   
             // Use SQL Database if in Azure, otherwise, use SQLite
-            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-                services.AddDbContext<ApplicationDbContext>(options =>
-                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-            else
+//            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+//                services.AddDbContext<ApplicationDbContext>(options =>
+//                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+//            else
             services.AddDbContext<ApplicationDbContext>(options =>
                        options.UseSqlServer(
                              Configuration.GetConnectionString("DefaultConnection")));

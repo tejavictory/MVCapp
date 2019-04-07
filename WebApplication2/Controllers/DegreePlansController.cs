@@ -64,7 +64,9 @@ namespace Application.Controllers
                     students = students.OrderBy(s => s.DegreePlanId);
                     break;
             }
-            return View(students.ToList());
+            //return View(students.ToList());
+            return View(await students.ToListAsync());
+
             //return View(await applicationDbContext.ToListAsync());
         }
 

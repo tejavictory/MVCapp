@@ -54,7 +54,9 @@ namespace Application.Controllers
                     students = students.OrderBy(s => s.StudentId);
                     break;
             }
-            return View(students.ToList());
+            //return View(students.ToList());
+            return View(await students.ToListAsync());
+
             //            return View(await _context.Students.ToListAsync());
         }
 

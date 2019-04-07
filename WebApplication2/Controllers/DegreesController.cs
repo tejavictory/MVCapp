@@ -54,9 +54,10 @@ namespace Application.Controllers
                     students = students.OrderBy(s => s.DegreeId);
                     break;
             }
-            return View(students.ToList());
+            //return View(students.ToList());
+            return View(await students.ToListAsync());
 
-            //            return View(await _context.Degrees.ToListAsync());
+            // return View(await _context.Degrees.ToListAsync());
         }
 
         // GET: Degrees/Details/5

@@ -62,8 +62,10 @@ namespace Application.Controllers
                     students = students.OrderBy(s => s.SlotId);
                     break;
             }
-            return View(students.ToList());
-           // return View(await applicationDbContext.ToListAsync());
+            //return View(students.ToList());
+            return View(await students.ToListAsync());
+
+            // return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Slots/Details/5

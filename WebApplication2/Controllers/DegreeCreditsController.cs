@@ -51,9 +51,10 @@ namespace Application.Controllers
                     students = students.OrderBy(s => s.DegreeCreditId);
                     break;
             }
-            return View(students.ToList());
+            //return View(students.ToList());
+            return View(await students.ToListAsync());
 
- //           return View(await applicationDbContext.ToListAsync());
+            //           return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: DegreeCredits/Details/5
