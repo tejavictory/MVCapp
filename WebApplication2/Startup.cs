@@ -35,13 +35,13 @@ namespace WebApplication2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-                  
+
             // Use SQL Database if in Azure, otherwise, use SQLite
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
                 services.AddDbContext<ApplicationDbContext>(options =>
                         options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
             else
-            services.AddDbContext<ApplicationDbContext>(options =>
+                services.AddDbContext<ApplicationDbContext>(options =>
                        options.UseSqlServer(
                              Configuration.GetConnectionString("DefaultConnection")));
             // Automatically perform database migration
