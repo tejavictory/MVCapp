@@ -68,8 +68,10 @@ namespace Application.Controllers
                 return NotFound();
             }
 
+
             var degree = await _context.Degrees
-                .FirstOrDefaultAsync(m => m.DegreeId == id);
+            .Include(d => d.DegreeRequirements)
+            .SingleOrDefaultAsync(m => m.DegreeId == id);
             if (degree == null)
             {
                 return NotFound();
