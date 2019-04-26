@@ -19,11 +19,7 @@ namespace WebApplication2.Models
         public int IsSpring { get; set; }
         [Range(0, 1)]
         public int IsFall { get; set; }
-
-
-
-
-       
+        
 
 
     }

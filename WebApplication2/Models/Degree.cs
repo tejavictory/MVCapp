@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,7 +17,6 @@ namespace WebApplication2.Models
         [Range(0, 8)]
         public int NumberOfTerms { get; set; }
 
-
-
+        public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
     }
 }
