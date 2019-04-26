@@ -258,6 +258,27 @@ namespace WebApplication2.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DegreeRequirement",
+                columns: table => new
+                {
+                    DegreeRequirementId = table.Column<int>(nullable: false),
+                    DegreeId = table.Column<int>(nullable: false),
+                    RequirementNumber = table.Column<int>(nullable: false),
+                    RequirementAbbr = table.Column<string>(maxLength: 10, nullable: false),
+                    RequirementName = table.Column<string>(maxLength: 60, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DegreeRequirement", x => x.DegreeRequirementId);
+                    table.ForeignKey(
+                        name: "FK_DegreeRequirement_Degree_DegreeId",
+                        column: x => x.DegreeId,
+                        principalTable: "Degree",
+                        principalColumn: "DegreeId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DegreePlan",
                 columns: table => new
                 {
@@ -354,6 +375,11 @@ namespace WebApplication2.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DegreeRequirement_DegreeId",
+                table: "DegreeRequirement",
+                column: "DegreeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Slot_CreditId",
                 table: "Slot",
                 column: "CreditId");
@@ -386,6 +412,9 @@ namespace WebApplication2.Migrations
 
             migrationBuilder.DropTable(
                 name: "DegreePlan");
+
+            migrationBuilder.DropTable(
+                name: "DegreeRequirement");
 
             migrationBuilder.DropTable(
                 name: "Slot");

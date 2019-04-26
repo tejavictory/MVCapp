@@ -259,6 +259,29 @@ namespace WebApplication2.Migrations
                     b.ToTable("DegreePlan");
                 });
 
+            modelBuilder.Entity("WebApplication2.Models.DegreeRequirement", b =>
+                {
+                    b.Property<int>("DegreeRequirementId");
+
+                    b.Property<int>("DegreeId");
+
+                    b.Property<string>("RequirementAbbr")
+                        .IsRequired()
+                        .HasMaxLength(10);
+
+                    b.Property<string>("RequirementName")
+                        .IsRequired()
+                        .HasMaxLength(60);
+
+                    b.Property<int>("RequirementNumber");
+
+                    b.HasKey("DegreeRequirementId");
+
+                    b.HasIndex("DegreeId");
+
+                    b.ToTable("DegreeRequirement");
+                });
+
             modelBuilder.Entity("WebApplication2.Models.Slot", b =>
                 {
                     b.Property<int>("SlotId");
@@ -395,6 +418,14 @@ namespace WebApplication2.Migrations
                     b.HasOne("WebApplication2.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("WebApplication2.Models.DegreeRequirement", b =>
+                {
+                    b.HasOne("WebApplication2.Models.Degree", "Degree")
+                        .WithMany("DegreeRequirements")
+                        .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
