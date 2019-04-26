@@ -16,4 +16,9 @@ Searching and Sorting implemented.
 
 Azure link: http://endgameapr.azurewebsites.net/
 
+Issues: https://github.com/tejavictory/MVCapp/issues
+
+Commits: https://github.com/tejavictory/MVCapp/commits/master
+
+
 *Sample data included*
