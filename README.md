@@ -16,6 +16,8 @@ Searching and Sorting implemented.
 
 Azure link: http://endgameapr.azurewebsites.net/
 
+Azure deployment: https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-dotnet
+
 Issues: https://github.com/tejavictory/MVCapp/issues
 
 Commits: https://github.com/tejavictory/MVCapp/commits/master
