@@ -72,6 +72,42 @@ namespace WebApplication2.Data
             }
 
 
+            //DegreeRequirments
+
+            if (context.DegreeRequirements.Any())
+            {
+                Console.WriteLine("Credits already exist.");
+                return;
+            }
+            else
+            {
+                var degreeRequirements = new DegreeRequirement[]
+                {
+
+
+                    new DegreeRequirement {DegreeRequirementId = 1,RequirementNumber=542, RequirementAbbr="542", DegreeId = 4, RequirementName="OOPS with Java"},
+                    new DegreeRequirement {DegreeRequirementId = 2,RequirementNumber=563, RequirementAbbr="563", DegreeId = 4, RequirementName="Web Apps"},
+                    new DegreeRequirement {DegreeRequirementId = 3,RequirementNumber=560, RequirementAbbr="560", DegreeId = 4, RequirementName="Advanced Databases"},
+                    new DegreeRequirement {DegreeRequirementId = 4,RequirementNumber=664, RequirementAbbr="664-UX", DegreeId = 4, RequirementName="User Experience"},
+                    new DegreeRequirement {DegreeRequirementId = 5,RequirementNumber=618, RequirementAbbr="618-PM", DegreeId = 4, RequirementName="Project Management"},
+                    new DegreeRequirement {DegreeRequirementId = 6,RequirementNumber=555, RequirementAbbr="555-NS", DegreeId = 4, RequirementName="Network Security"},
+                    new DegreeRequirement {DegreeRequirementId = 7,RequirementNumber=691, RequirementAbbr="691-GDP1", DegreeId = 4, RequirementName="GDP1"},
+                    new DegreeRequirement {DegreeRequirementId = 8,RequirementNumber=692, RequirementAbbr="692-GDP2", DegreeId = 4, RequirementName="GDP2"},
+                    new DegreeRequirement {DegreeRequirementId = 9,RequirementNumber=6, RequirementAbbr="Mobile", DegreeId = 4, RequirementName="643 or 644 Mobile"},
+                    new DegreeRequirement {DegreeRequirementId = 10,RequirementNumber=10, RequirementAbbr="E1", DegreeId = 4, RequirementName="Elective 1"},
+                    new DegreeRequirement {DegreeRequirementId = 11,RequirementNumber=20, RequirementAbbr="E2", DegreeId = 4, RequirementName="Elective 2"},
+
+                };
+                Console.WriteLine($"Inserted {degreeRequirements.Length} new degree requirements.");
+
+                foreach (DegreeRequirement d in degreeRequirements)
+                {
+                    context.DegreeRequirements.Add(d);
+                }
+                context.SaveChanges();
+            }
+
+
             //for Student - Mouni
 
             if (context.Students.Any())

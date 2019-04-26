@@ -16,6 +16,7 @@ namespace WebApplication2.Data
 
         }
         public DbSet<Degree> Degrees {get;set;}
+        public DbSet<DegreeRequirement> DegreeRequirements { get; set; }
         public DbSet<Credit> Credits {get;set;}
         public DbSet<Student> Students { get; set; }
         public DbSet<DegreeCredit> DegreeCredits {get;set;}
@@ -28,6 +29,7 @@ namespace WebApplication2.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder){
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Degree>().ToTable("Degree");
+            modelBuilder.Entity<DegreeRequirement>().ToTable("DegreeRequirement");
             modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");
