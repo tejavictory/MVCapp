@@ -13,4 +13,7 @@
 Controllers and Views scaffolded successfully.
 Searching and Sorting implemented.
 
+
+Azure link: http://endgameapr.azurewebsites.net/
+
 *Sample data included*
