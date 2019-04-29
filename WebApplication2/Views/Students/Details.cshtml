@@ -10,23 +10,58 @@
     <h4>Student</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Family)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Family)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Given)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Given)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.N919)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.N919)
+        </dd>
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreePlans)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Plan Number</th>
+                    <th>Plan Abbrev</th>
+                    <th>Plan Name</th>
+                    <th>Degree Status</th>
+                    <th>More</th>
+                </tr>
+                @foreach (var item in Model.DegreePlans.OrderBy(p => p.DegreePlanId))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreePlanId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreePlanAbbr)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreePlanName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreePlanSelected)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-controller="DegreePlans" asp-route-id="@item.DegreePlanId">Plan</a>
+                        </td>
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>

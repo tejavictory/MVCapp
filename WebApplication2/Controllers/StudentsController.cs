@@ -69,7 +69,11 @@ namespace Application.Controllers
             }
 
             var student = await _context.Students
-                .FirstOrDefaultAsync(m => m.StudentId == id);
+  .Include(d => d.DegreePlans)
+  .SingleOrDefaultAsync(m => m.StudentId == id);
+
+           // var student = await _context.Students
+             //  .FirstOrDefaultAsync(m => m.StudentId == id);
             if (student == null)
             {
                 return NotFound();
