@@ -13,11 +13,14 @@ namespace WebApplication2.Models
          [Range(1,10)]
         public int Term { get; set; }
 
+        public int DegreeRequirementId { get; set; }
         public int CreditId { get; set; }
          [StringLength(1)]
         public string Status { get; set; }
       
+        public DegreeRequirement DegreeRequirement { get; set; }
         public Credit Credit { get; set; }
+        public DegreePlan DegreePlan;
 
 
     }

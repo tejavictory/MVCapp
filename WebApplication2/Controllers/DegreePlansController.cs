@@ -22,7 +22,9 @@ namespace Application.Controllers
         // GET: DegreePlans
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var applicationDbContext = _context.DegreePlans.Include(d => d.Student);
+var applicationDbContext = _context.DegreePlans
+                .Include(p => p.Degree).ThenInclude(pd => pd.DegreeRequirements)
+                .Include(p => p.Student);
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.NumberSortParm = sortOrder == "Number" ? "number_desc" : "Number";
             ViewBag.AbbrSortParm = sortOrder == "Abbr" ? "abbr_desc" : "Abbr";
@@ -79,8 +81,12 @@ namespace Application.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
-                .Include(d => d.Student)
-                .FirstOrDefaultAsync(m => m.DegreePlanId == id);
+                .Include(p => p.Degree)
+                .Include(p => p.Student)
+                .SingleOrDefaultAsync(m => m.DegreePlanId == id);
+            // var degreePlan = await _context.DegreePlans
+            //     .Include(d => d.Student)
+            //     .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
             {
                 return NotFound();
@@ -92,6 +98,8 @@ namespace Application.Controllers
         // GET: DegreePlans/Create
         public IActionResult Create()
         {
+                ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbbr");
+            
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
             return View();
         }
@@ -109,6 +117,8 @@ namespace Application.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+                   ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbbrev", degreePlan.DegreeId);
+            
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreePlan.StudentId);
             return View(degreePlan);
         }
@@ -121,11 +131,19 @@ namespace Application.Controllers
                 return NotFound();
             }
 
-            var degreePlan = await _context.DegreePlans.FindAsync(id);
+            var degreePlan = await _context.DegreePlans
+                .Include(p => p.Degree).ThenInclude(pd => pd.DegreeRequirements)
+                .Include(p => p.Student)
+                .Include(p => p.PlanTerms).ThenInclude(pt => pt.PlanTermRequirements)
+                .SingleOrDefaultAsync(m => m.DegreePlanId == id);
+
+            // var degreePlan = await _context.DegreePlans.FindAsync(id);
             if (degreePlan == null)
             {
                 return NotFound();
             }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbbrev", degreePlan.DegreeId);
+            
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreePlan.StudentId);
             return View(degreePlan);
         }
@@ -162,6 +180,8 @@ namespace Application.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+                      ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbbrev", degreePlan.DegreeId);
+        
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreePlan.StudentId);
             return View(degreePlan);
         }
@@ -173,10 +193,15 @@ namespace Application.Controllers
             {
                 return NotFound();
             }
+                  var degreePlan = await _context.DegreePlans
+                .Include(s => s.Degree)
+                .Include(s => s.Student)
+                .SingleOrDefaultAsync(m => m.DegreePlanId == id);
+         
 
-            var degreePlan = await _context.DegreePlans
-                .Include(d => d.Student)
-                .FirstOrDefaultAsync(m => m.DegreePlanId == id);
+            // var degreePlan = await _context.DegreePlans
+            //     .Include(d => d.Student)
+            //     .FirstOrDefaultAsync(m => m.DegreePlanId == id);
             if (degreePlan == null)
             {
                 return NotFound();

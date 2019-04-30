@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,8 +17,11 @@ namespace WebApplication2.Models
         public string TermAbbr { get; set; }
         [StringLength(10)]
         public string TermName { get; set; }
+        public ICollection<Slot> PlanTermRequirements { get; set; }
+
 
         public Student Student { get; set; }
+
 
     }
 }
