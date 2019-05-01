@@ -237,6 +237,9 @@ namespace WebApplication2.Data
             }
 
 
+
+
+
             //for Slot - TEJA
 
             if (context.Slots.Any())
@@ -248,39 +251,39 @@ namespace WebApplication2.Data
             {
                 var slots = new Slot[]
                 {
-                    new Slot {SlotId=1, DegreePlanSelected=5681, Term=1, DegreeRequirementId= 542 , CreditId=542, Status="C"},
-                    new Slot {SlotId=2, DegreePlanSelected=5681, Term=1, DegreeRequirementId= 563 , CreditId=563, Status="C"},
-                    new Slot {SlotId=3, DegreePlanSelected=5681, Term=1, DegreeRequirementId= 560 , CreditId=560, Status="C"},
-                    new Slot {SlotId=4, DegreePlanSelected=5681, Term=2, DegreeRequirementId= 664 , CreditId=664, Status="A"},
-                    new Slot {SlotId=5, DegreePlanSelected=5681, Term=2, DegreeRequirementId= 6 , CreditId=6, Status="A"},
-                    new Slot {SlotId=6, DegreePlanSelected=5681, Term=2, DegreeRequirementId= 10 , CreditId=10, Status="A"},
-                    new Slot {SlotId=7, DegreePlanSelected=5681, Term=3, DegreeRequirementId= 618 , CreditId=618, Status="P"},
-                    new Slot {SlotId=8, DegreePlanSelected=5681, Term=3, DegreeRequirementId= 691 , CreditId=691, Status="P"},
-                    new Slot {SlotId=9, DegreePlanSelected=5681, Term=4, DegreeRequirementId= 692 , CreditId=692, Status="P"},
-                    new Slot {SlotId=10, DegreePlanSelected=5681, Term=4, DegreeRequirementId= 20 , CreditId=20, Status="P"},
-                    new Slot {SlotId=11, DegreePlanSelected=5681, Term=4, DegreeRequirementId= 555 , CreditId=555, Status="P"},
-                    new Slot {SlotId=12, DegreePlanSelected=7082, Term=1, DegreeRequirementId= 542 , CreditId=542, Status="C"},
-                    new Slot {SlotId=13, DegreePlanSelected=7082, Term=1, DegreeRequirementId= 563 , CreditId=563, Status="C"},
-                    new Slot {SlotId=14, DegreePlanSelected=7082, Term=1, DegreeRequirementId= 560 , CreditId=560, Status="C"},
-                    new Slot {SlotId=15, DegreePlanSelected=7082, Term=2, DegreeRequirementId= 664 , CreditId=664, Status="A"},
-                    new Slot {SlotId=16, DegreePlanSelected=7082, Term=2, DegreeRequirementId= 6 , CreditId=6, Status="A"},
-                    new Slot {SlotId=17, DegreePlanSelected=7082, Term=2, DegreeRequirementId= 10 , CreditId=10, Status="A"},
-                    new Slot {SlotId=18, DegreePlanSelected=7082, Term=3, DegreeRequirementId= 618 , CreditId=618, Status="P"},
-                    new Slot {SlotId=19, DegreePlanSelected=7082, Term=4, DegreeRequirementId= 691 , CreditId=691, Status="P"},
-                    new Slot {SlotId=20, DegreePlanSelected=7082, Term=4, DegreeRequirementId= 20 , CreditId=20, Status="P"},
-                    new Slot {SlotId=21, DegreePlanSelected=7082, Term=5, DegreeRequirementId= 692 , CreditId=692, Status="P"},
-                    new Slot {SlotId=22, DegreePlanSelected=7082, Term=5, DegreeRequirementId= 555 , CreditId=555, Status="P"},
-                    new Slot {SlotId=23, DegreePlanSelected=8973, Term=1, DegreeRequirementId= 542 , CreditId=542, Status="A"},
-                    new Slot {SlotId=24, DegreePlanSelected=8973, Term=1, DegreeRequirementId= 563 , CreditId=563, Status="A"},
-                    new Slot {SlotId=25, DegreePlanSelected=8973, Term=1, DegreeRequirementId= 560 , CreditId=560, Status="A"},
-                    new Slot {SlotId=26, DegreePlanSelected=8973, Term=2, DegreeRequirementId= 664 , CreditId=664, Status="P"},
-                    new Slot {SlotId=27, DegreePlanSelected=8973, Term=2, DegreeRequirementId= 6 , CreditId=6, Status="P"},
-                    new Slot {SlotId=28, DegreePlanSelected=8973, Term=2, DegreeRequirementId= 10 , CreditId=10, Status="P"},
-                    new Slot {SlotId=29, DegreePlanSelected=8973, Term=3, DegreeRequirementId= 20 , CreditId=20, Status="P"},
-                    new Slot {SlotId=30, DegreePlanSelected=8973, Term=3, DegreeRequirementId= 555 , CreditId=555, Status="P"},
-                    new Slot {SlotId=31, DegreePlanSelected=8973, Term=3, DegreeRequirementId= 691 , CreditId=691, Status="P"},
-                    new Slot {SlotId=32, DegreePlanSelected=8973, Term=4, DegreeRequirementId= 618 , CreditId=618, Status="P"},
-                    new Slot {SlotId=33, DegreePlanSelected=8973, Term=4, DegreeRequirementId= 692 , CreditId=692, Status="P"},
+                    new Slot {SlotId=1, DegreePlanSelected=5681, Term=1, DegreeRequirementId= 1 , CreditId=542, Status="C"},
+                    new Slot {SlotId=2, DegreePlanSelected=5681, Term=1, DegreeRequirementId= 2 , CreditId=563, Status="C"},
+                    new Slot {SlotId=3, DegreePlanSelected=5681, Term=1, DegreeRequirementId= 3 , CreditId=560, Status="C"},
+                    new Slot {SlotId=4, DegreePlanSelected=5681, Term=2, DegreeRequirementId= 4 , CreditId=664, Status="A"},
+                    new Slot {SlotId=5, DegreePlanSelected=5681, Term=2, DegreeRequirementId= 5 , CreditId=6, Status="A"},
+                    new Slot {SlotId=6, DegreePlanSelected=5681, Term=2, DegreeRequirementId= 6 , CreditId=10, Status="A"},
+                    new Slot {SlotId=7, DegreePlanSelected=5681, Term=3, DegreeRequirementId= 7 , CreditId=618, Status="P"},
+                    new Slot {SlotId=8, DegreePlanSelected=5681, Term=3, DegreeRequirementId= 8 , CreditId=691, Status="P"},
+                    new Slot {SlotId=9, DegreePlanSelected=5681, Term=4, DegreeRequirementId= 9 , CreditId=692, Status="P"},
+                    new Slot {SlotId=10, DegreePlanSelected=5681, Term=4, DegreeRequirementId= 10 , CreditId=20, Status="P"},
+                    new Slot {SlotId=11, DegreePlanSelected=5681, Term=4, DegreeRequirementId= 11 , CreditId=555, Status="P"},
+                    new Slot {SlotId=12, DegreePlanSelected=7082, Term=1, DegreeRequirementId= 1 , CreditId=542, Status="C"},
+                    new Slot {SlotId=13, DegreePlanSelected=7082, Term=1, DegreeRequirementId= 2 , CreditId=563, Status="C"},
+                    new Slot {SlotId=14, DegreePlanSelected=7082, Term=1, DegreeRequirementId= 3 , CreditId=560, Status="C"},
+                    new Slot {SlotId=15, DegreePlanSelected=7082, Term=2, DegreeRequirementId= 4 , CreditId=664, Status="A"},
+                    new Slot {SlotId=16, DegreePlanSelected=7082, Term=2, DegreeRequirementId= 5 , CreditId=6, Status="A"},
+                    new Slot {SlotId=17, DegreePlanSelected=7082, Term=2, DegreeRequirementId= 6 , CreditId=10, Status="A"},
+                    new Slot {SlotId=18, DegreePlanSelected=7082, Term=3, DegreeRequirementId= 7 , CreditId=618, Status="P"},
+                    new Slot {SlotId=19, DegreePlanSelected=7082, Term=4, DegreeRequirementId= 8 , CreditId=691, Status="P"},
+                    new Slot {SlotId=20, DegreePlanSelected=7082, Term=4, DegreeRequirementId= 9 , CreditId=20, Status="P"},
+                    new Slot {SlotId=21, DegreePlanSelected=7082, Term=5, DegreeRequirementId= 10 , CreditId=692, Status="P"},
+                    new Slot {SlotId=22, DegreePlanSelected=7082, Term=5, DegreeRequirementId= 11 , CreditId=555, Status="P"},
+                    new Slot {SlotId=23, DegreePlanSelected=8973, Term=1, DegreeRequirementId= 1 , CreditId=542, Status="A"},
+                    new Slot {SlotId=24, DegreePlanSelected=8973, Term=1, DegreeRequirementId= 2 , CreditId=563, Status="A"},
+                    new Slot {SlotId=25, DegreePlanSelected=8973, Term=1, DegreeRequirementId= 3 , CreditId=560, Status="A"},
+                    new Slot {SlotId=26, DegreePlanSelected=8973, Term=2, DegreeRequirementId= 4 , CreditId=664, Status="P"},
+                    new Slot {SlotId=27, DegreePlanSelected=8973, Term=2, DegreeRequirementId= 5 , CreditId=6, Status="P"},
+                    new Slot {SlotId=28, DegreePlanSelected=8973, Term=2, DegreeRequirementId= 6 , CreditId=10, Status="P"},
+                    new Slot {SlotId=29, DegreePlanSelected=8973, Term=3, DegreeRequirementId= 7 , CreditId=20, Status="P"},
+                    new Slot {SlotId=30, DegreePlanSelected=8973, Term=3, DegreeRequirementId= 8 , CreditId=555, Status="P"},
+                    new Slot {SlotId=31, DegreePlanSelected=8973, Term=3, DegreeRequirementId= 9 , CreditId=691, Status="P"},
+                    new Slot {SlotId=32, DegreePlanSelected=8973, Term=4, DegreeRequirementId= 10 , CreditId=618, Status="P"},
+                    new Slot {SlotId=33, DegreePlanSelected=8973, Term=4, DegreeRequirementId= 11 , CreditId=692, Status="P"},
 
                 };
                 Console.WriteLine($"Inserted {slots.Length} new slots.");
@@ -291,6 +294,8 @@ namespace WebApplication2.Data
                 }
                 context.SaveChanges();
             }
+
+
 
             //for StudentTerm - TEJA
             if (context.StudentTerms.Any())
@@ -325,6 +330,7 @@ namespace WebApplication2.Data
                 }
                 context.SaveChanges();
             }
+
 
 
         }

@@ -345,7 +345,7 @@ namespace WebApplication2.Migrations
                         .HasMaxLength(10);
 
                     b.Property<string>("TermName")
-                        .HasMaxLength(10);
+                        .HasMaxLength(20);
 
                     b.HasKey("StudentTermId");
 

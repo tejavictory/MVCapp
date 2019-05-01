@@ -10,7 +10,7 @@ using WebApplication2.Data;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190430015102_InitialCreate")]
+    [Migration("20190501001309_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -347,7 +347,7 @@ namespace WebApplication2.Migrations
                         .HasMaxLength(10);
 
                     b.Property<string>("TermName")
-                        .HasMaxLength(10);
+                        .HasMaxLength(20);
 
                     b.HasKey("StudentTermId");
 

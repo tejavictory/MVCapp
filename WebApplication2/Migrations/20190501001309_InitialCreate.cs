@@ -293,7 +293,7 @@ namespace WebApplication2.Migrations
                     StudentId = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
                     TermAbbr = table.Column<string>(maxLength: 10, nullable: true),
-                    TermName = table.Column<string>(maxLength: 10, nullable: true),
+                    TermName = table.Column<string>(maxLength: 20, nullable: true),
                     DegreePlanId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

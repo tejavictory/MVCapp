@@ -15,7 +15,7 @@ namespace WebApplication2.Models
         public int Term { get; set; }
         [StringLength(10)]
         public string TermAbbr { get; set; }
-        [StringLength(10)]
+        [StringLength(20)]
         public string TermName { get; set; }
         public ICollection<Slot> PlanTermRequirements { get; set; }
 

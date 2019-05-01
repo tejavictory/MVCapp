@@ -20,7 +20,7 @@ namespace WebApplication2.Models
       
         public DegreeRequirement DegreeRequirement { get; set; }
         public Credit Credit { get; set; }
-        public DegreePlan DegreePlan;
+//        public DegreePlan DegreePlan { get; set; }
 
 
     }
